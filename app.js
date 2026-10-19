@@ -220,6 +220,16 @@ const FILMS_FAV = [
   "Inherent Vice",
   "Twin Peaks: Fire Walk with Me",
   "Mulholland Drive",
+  "Paris, Texas",
+  "Boogie Nights",
+  "Do the Right Thing",
+  "Ratatouille",
+  "Bambi",
+  "All That Jazz",
+  "Rosemary's Baby",
+  "The Royal Tenenbaums",
+  "Amadeus",
+  "Almost Famous",
 ];
 
 function stars(n) {

@@ -191,6 +191,8 @@ main {
 
 /* ---------- experience ---------- */
 .exp-switch { margin-bottom: 18px; }
+.exp-switch { align-items: baseline; }
+.pubs { margin-left: -8px; font-size: 13px; color: var(--navy-soft); opacity: .7; }
 .roles { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); border-bottom: 1px solid var(--rule); margin-bottom: 22px; }
 .roles button {
   text-align: left;

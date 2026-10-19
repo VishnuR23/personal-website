@@ -129,6 +129,7 @@ function selectJob(i) {
 
 function renderJobs(kind) {
   jobKind = kind;
+  document.getElementById("pubs").hidden = kind !== "research";
   document.querySelectorAll("#exp-switch button").forEach((b) => b.setAttribute("aria-selected", b.dataset.kind === kind));
   roleList.innerHTML = JOBS[kind].map((j, i) => `
     <button role="tab" data-i="${i}" aria-selected="${i === 0}">

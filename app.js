@@ -225,6 +225,7 @@ const FILMS_FAV = [
   "Bambi",
   "All That Jazz",
   "The Royal Tenenbaums",
+  "Do the Right Thing",
 ];
 
 function stars(n) {

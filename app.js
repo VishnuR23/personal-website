@@ -60,54 +60,87 @@ async function loadWeather() {
 }
 
 // ---------- experience ----------
-const JOBS = [
-  {
-    co: "Stealth Startup", title: "Research Engineer", note: "Series A, under NDA",
-    where: "San Francisco", when: "Aug 2026 – now",
-    summary: "I'm building the backend from scratch and post-training open-source models that go into production. I also build integrations for the researchers who use it, and turn what they tell me into product changes.",
-  },
-  {
-    co: "Microsoft", title: "Data Science Intern",
-    where: "Seattle", when: "May – Aug 2026",
-    summary: "I built a sandboxed home for internal AI agents, plus the evals that cut down how often they made things up. On the side I ran causal inference experiments and built a model for finding new customers.",
-  },
-  {
-    co: "Brilliant Earth", title: "Applied Science Intern",
-    where: "San Francisco", when: "May – Aug 2025",
-    summary: "I rebuilt the company's financial forecasting models so they missed by a lot less. I also designed and shipped a feature customers liked, and built the data pipelines PMs and engineers leaned on.",
-  },
-  {
-    co: "Innov8ai", title: "Machine Learning Engineer Intern",
-    where: "San Francisco", when: "Feb – May 2025",
-    summary: "I built NLP pipelines that took data all the way from ingestion to testing and evals. Then I tuned the models until they got noticeably more accurate.",
-  },
-];
+const JOBS = {
+  work: [
+    {
+      co: "Stealth Startup", title: "Research Engineer", note: "Series A, under NDA",
+      where: "San Francisco", when: "Aug 2026 – now",
+      summary: "I'm building the backend from scratch and post-training open-source models that go into production. I also build integrations for the researchers who use it, and turn what they tell me into product changes.",
+    },
+    {
+      co: "Microsoft", title: "Data Science Intern",
+      where: "Seattle", when: "May – Aug 2026",
+      summary: "I built a sandboxed home for internal AI agents, plus the evals that cut down how often they made things up. On the side I ran causal inference experiments and built a model for finding new customers.",
+    },
+    {
+      co: "Brilliant Earth", title: "Applied Science Intern",
+      where: "San Francisco", when: "May – Aug 2025",
+      summary: "I rebuilt the company's financial forecasting models so they missed by a lot less. I also designed and shipped a feature customers liked, and built the data pipelines PMs and engineers leaned on.",
+    },
+    {
+      co: "Innov8ai", title: "Machine Learning Engineer Intern",
+      where: "San Francisco", when: "Feb – May 2025",
+      summary: "I built NLP pipelines that took data all the way from ingestion to testing and evals. Then I tuned the models until they got noticeably more accurate.",
+    },
+  ],
+  // research roles show no dates; "short" is the second line on the tab.
+  research: [
+    {
+      co: "Berkeley NetSys Lab", short: "agent security", title: "AI Security & Systems Student Researcher",
+      summary: "I build guardrails and evals for AI agents that change critical systems code, like gRPC, Kubernetes, and Linux.",
+    },
+    {
+      co: "Independent Research", short: "behavior analysis", title: "Researcher",
+      summary: "I study how models behave by running hierarchical agentic evals. It's going to NeurIPS 2026!",
+    },
+    {
+      co: "BAIR", short: "deep learning", title: "Deep Learning Student Researcher", note: "Berkeley AI Research",
+      summary: "I built explainable deep learning models, and the evals around them, to work out biological relationships from genetic data.",
+    },
+    {
+      co: "BAIR", short: "transformers", title: "AI Student Researcher", note: "Berkeley AI Research",
+      summary: "I worked on transformers, looking for better ways to structure the matrices LLMs use to process data.",
+    },
+    {
+      co: "UC Berkeley", short: "nlp", title: "NLP Student Researcher",
+      summary: "I fine-tuned open-source NLP models and built the pipeline around them, from preparing the data to training and evaluating.",
+    },
+  ],
+};
 
-function renderJobs() {
-  const list = document.getElementById("roles");
-  const detail = document.getElementById("role-detail");
-  list.innerHTML = JOBS.map((j, i) => `
+const roleList = document.getElementById("roles");
+const roleDetail = document.getElementById("role-detail");
+let jobKind = "work";
+
+function selectJob(i) {
+  const j = JOBS[jobKind][i];
+  roleList.querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b.dataset.i == i));
+  roleDetail.innerHTML = `
+    <div>
+      <h2>${j.title}</h2>
+      <p class="role-meta">${j.co}${j.note ? ` (${j.note})` : ""}${j.where ? `<br>${j.where}` : ""}</p>
+    </div>
+    <p class="role-sum">${j.summary}</p>`;
+}
+
+function renderJobs(kind) {
+  jobKind = kind;
+  document.querySelectorAll("#exp-switch button").forEach((b) => b.setAttribute("aria-selected", b.dataset.kind === kind));
+  roleList.innerHTML = JOBS[kind].map((j, i) => `
     <button role="tab" data-i="${i}" aria-selected="${i === 0}">
       <span class="r-co">${j.co}</span>
-      <span class="r-when">${j.when}</span>
+      <span class="r-when">${j.when ?? j.short}</span>
     </button>`).join("");
-
-  function select(i) {
-    const j = JOBS[i];
-    list.querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b.dataset.i == i));
-    detail.innerHTML = `
-      <div>
-        <h2>${j.title}</h2>
-        <p class="role-meta">${j.co}${j.note ? ` (${j.note})` : ""}<br>${j.where}</p>
-      </div>
-      <p class="role-sum">${j.summary}</p>`;
-  }
-  list.addEventListener("click", (e) => {
-    const b = e.target.closest("button");
-    if (b) select(+b.dataset.i);
-  });
-  select(0);
+  selectJob(0);
 }
+roleList.addEventListener("click", (e) => {
+  const b = e.target.closest("button");
+  if (b) selectJob(+b.dataset.i);
+});
+document.getElementById("exp-switch").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-kind]");
+  if (b) renderJobs(b.dataset.kind);
+});
 
 // ---------- research / projects / open source ----------
 const WORK = {
@@ -212,7 +245,7 @@ themeBtn.addEventListener("click", () => {
 });
 paintThemeButton();
 
-renderJobs();
+renderJobs("work");
 renderShelves();
 renderWork("research");
 tickClock();

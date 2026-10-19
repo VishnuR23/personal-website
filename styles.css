@@ -190,7 +190,8 @@ main {
 .c-me p { max-width: 62ch; }
 
 /* ---------- experience ---------- */
-.roles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--rule); margin-bottom: 22px; }
+.exp-switch { margin-bottom: 18px; }
+.roles { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); border-bottom: 1px solid var(--rule); margin-bottom: 22px; }
 .roles button {
   text-align: left;
   background: none;
@@ -201,6 +202,7 @@ main {
   cursor: pointer;
   display: grid;
   gap: 1px;
+  align-content: space-between;
   color: var(--navy-soft);
 }
 .roles button:hover { color: var(--navy); }
@@ -331,7 +333,7 @@ main {
   .view-home > *, .view-about > * { grid-area: auto; }
   .c-hello { order: -1; }
   .now, .entries, .two-col { grid-template-columns: minmax(0, 1fr); }
-  .roles { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: 10px; }
+  .roles { grid-auto-flow: row; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: 10px; }
   .role { gap: 16px; }
   .view-puzzle { grid-template-rows: auto; }
   .board-wrap { aspect-ratio: 1; }

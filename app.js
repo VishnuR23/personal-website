@@ -198,13 +198,13 @@ document.querySelector(".view-work .switch").addEventListener("click", (e) => {
 // rating is out of 5 stars.
 const BOOKS_READ = [
   { title: "The Stranger", by: "Albert Camus", rating: 3 },
-  { title: "The Picture of Dorian Gray", by: "Oscar Wilde", rating: 4 },
+  { title: "The Way of Kings", by: "Brandon Sanderson", rating: 4 },
   { title: "War and Peace", by: "Leo Tolstoy", rating: 5 },
   { title: "Norwegian Wood", by: "Haruki Murakami", rating: 3 },
   { title: "Kafka on the Shore", by: "Haruki Murakami", rating: 3.5 },
   { title: "East of Eden", by: "John Steinbeck", rating: 5 },
   { title: "The Winter of Our Discontent", by: "John Steinbeck", rating: 3 },
-  { title: "The Way of Kings", by: "Brandon Sanderson", rating: 4 },
+  { title: "The Picture of Dorian Gray", by: "Oscar Wilde", rating: 4 },
 ];
 
 const FILMS_RECENT = [

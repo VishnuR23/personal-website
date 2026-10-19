@@ -86,11 +86,11 @@ const JOBS = {
   // research roles show no dates; "short" is the second line on the tab.
   research: [
     {
-      co: "UC Berkeley", short: "agent security", title: "AI Security & Systems", note: "NetSys Lab",
+      co: "Cal", short: "agent security", title: "AI Security & Systems", note: "NetSys Lab",
       summary: "I build guardrails and evals for AI agents that change critical systems code, like gRPC, Kubernetes, and Linux.",
     },
     {
-      co: "UC Berkeley", short: "ai safety", title: "AI Safety",
+      co: "Cal", short: "ai safety", title: "AI Safety",
       summary: "I work on making real-world AI systems more reliable by improving how we measure and track what goes into LLM training data.",
     },
     {
@@ -106,7 +106,7 @@ const JOBS = {
       summary: "I worked on transformers, looking for better ways to structure the matrices LLMs use to process data.",
     },
     {
-      co: "UC Berkeley", short: "nlp", title: "NLP",
+      co: "Cal", short: "nlp", title: "NLP",
       summary: "I fine-tuned open-source NLP models and built the pipeline around them, from preparing the data to training and evaluating.",
     },
   ],

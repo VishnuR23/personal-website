@@ -86,27 +86,27 @@ const JOBS = {
   // research roles show no dates; "short" is the second line on the tab.
   research: [
     {
-      co: "Berkeley NetSys Lab", short: "agent security", title: "AI Security & Systems Student Researcher",
+      co: "NetSys Lab", short: "agent security", title: "AI Security & Systems", note: "UC Berkeley",
       summary: "I build guardrails and evals for AI agents that change critical systems code, like gRPC, Kubernetes, and Linux.",
     },
     {
-      co: "UC Berkeley", short: "ai safety", title: "AI Safety Student Researcher",
+      co: "UC Berkeley", short: "ai safety", title: "AI Safety",
       summary: "I work on making real-world AI systems more reliable by improving how we measure and track what goes into LLM training data.",
     },
     {
-      co: "Independent Research", short: "behavior analysis", title: "Researcher",
+      co: "Independent", short: "behavior analysis", title: "Behavior Analysis",
       summary: "I study how models behave by running hierarchical agentic evals. It's going to NeurIPS 2026!",
     },
     {
-      co: "BAIR", short: "deep learning", title: "Deep Learning Student Researcher", note: "Berkeley AI Research",
+      co: "BAIR", short: "deep learning", title: "Deep Learning", note: "Berkeley AI Research",
       summary: "I built explainable deep learning models, and the evals around them, to work out biological relationships from genetic data.",
     },
     {
-      co: "BAIR", short: "transformers", title: "AI Student Researcher", note: "Berkeley AI Research",
+      co: "BAIR", short: "transformers", title: "Transformers", note: "Berkeley AI Research",
       summary: "I worked on transformers, looking for better ways to structure the matrices LLMs use to process data.",
     },
     {
-      co: "UC Berkeley", short: "nlp", title: "NLP Student Researcher",
+      co: "UC Berkeley", short: "nlp", title: "NLP",
       summary: "I fine-tuned open-source NLP models and built the pipeline around them, from preparing the data to training and evaluating.",
     },
   ],

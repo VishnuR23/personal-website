@@ -90,6 +90,10 @@ const JOBS = {
       summary: "I build guardrails and evals for AI agents that change critical systems code, like gRPC, Kubernetes, and Linux.",
     },
     {
+      co: "UC Berkeley", short: "ai safety", title: "AI Safety Student Researcher",
+      summary: "I work on making real-world AI systems more reliable by improving how we measure and track what goes into LLM training data.",
+    },
+    {
       co: "Independent Research", short: "behavior analysis", title: "Researcher",
       summary: "I study how models behave by running hierarchical agentic evals. It's going to NeurIPS 2026!",
     },

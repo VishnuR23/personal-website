@@ -64,37 +64,22 @@ const JOBS = [
   {
     co: "Stealth Startup", title: "Research Engineer", note: "Series A, under NDA",
     where: "San Francisco", when: "Aug 2026 – now",
-    points: [
-      "Building backend infrastructure from zero, plus post-training, evaluating, and deploying open-source AI models for production.",
-      "Creating and deploying customer integrations for researchers from scratch, and turning their feedback into product improvements.",
-    ],
+    summary: "I'm building the backend from scratch and post-training open-source models that go into production. I also build integrations for the researchers who use it, and turn what they tell me into product changes.",
   },
   {
     co: "Microsoft", title: "Data Science Intern",
     where: "Seattle", when: "May – Aug 2026",
-    points: [
-      "Built, tested, and shipped secure, sandboxed infrastructure hosting internal AI agents for data, competitor, and market analysis.",
-      "Owned the design, execution, and validation of causal inference experiments in Databricks using DiD, stratification, and t-tests.",
-      "Deployed benchmarking and eval pipelines to reduce hallucinations in production agents, raising output reliability by 13 points.",
-      "Created an end-to-end ML pipeline for customer acquisition, covering segmentation, propensity modeling, and validation.",
-    ],
+    summary: "I built a sandboxed home for internal AI agents, plus the evals that cut down how often they made things up. On the side I ran causal inference experiments and built a model for finding new customers.",
   },
   {
     co: "Brilliant Earth", title: "Applied Science Intern",
     where: "San Francisco", when: "May – Aug 2025",
-    points: [
-      "Redesigned financial forecasting pipelines using XGBoost on time-series patterns, cutting forecast error by 18%.",
-      "Owned A/B testing and rollout of a feature I designed in Figma, raising surveyed customer satisfaction by 36%.",
-      "Built Snowflake SQL and pandas pipelines for user, market, and inventory analysis used by PMs and engineers.",
-    ],
+    summary: "I rebuilt the company's financial forecasting models so they missed by a lot less. I also designed and shipped a feature customers liked, and built the data pipelines PMs and engineers leaned on.",
   },
   {
     co: "Innov8ai", title: "Machine Learning Engineer Intern",
     where: "San Francisco", when: "Feb – May 2025",
-    points: [
-      "Engineered CI/CD NLP pipelines (TensorFlow, Python, S3) for data ingestion, feature selection, testing, and model evals.",
-      "Boosted classification model accuracy by 17% and sharpened model reliability via hyperparameter tuning with PyTorch.",
-    ],
+    summary: "I built NLP pipelines that took data all the way from ingestion to testing and evals. Then I tuned the models until they got noticeably more accurate.",
   },
 ];
 
@@ -115,7 +100,7 @@ function renderJobs() {
         <h2>${j.title}</h2>
         <p class="role-meta">${j.co}${j.note ? ` (${j.note})` : ""}<br>${j.where}</p>
       </div>
-      <ul>${j.points.map((p) => `<li>${p}</li>`).join("")}</ul>`;
+      <p class="role-sum">${j.summary}</p>`;
   }
   list.addEventListener("click", (e) => {
     const b = e.target.closest("button");

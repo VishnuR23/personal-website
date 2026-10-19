@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vishnu Rajeev</title>
+  <meta name="description" content="Vishnu Rajeev: applied math & statistics at UC Berkeley. AI safety, post-training, and agent security.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231c2b4b'/><rect x='6' y='6' width='20' height='20' fill='%23fff'/><rect x='11' y='11' width='10' height='10' fill='%23c4343c'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Pick the theme before first paint: saved choice, else the system setting.
+    (() => {
+      let t = null;
+      try { t = localStorage.getItem("theme"); } catch {}
+      document.documentElement.dataset.theme = t || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    })();
+  </script>
+</head>
+<body>
+  <header class="top">
+    <a class="name" href="#home">Vishnu Rajeev</a>
+
+    <nav class="tabs" aria-label="Sections">
+      <a href="#home" data-tab="home">home</a>
+      <a href="#about" data-tab="about">about</a>
+      <a href="#experience" data-tab="experience">experience</a>
+      <a href="#work" data-tab="work">research &amp; projects</a>
+      <a href="#books" data-tab="more">more</a>
+      <button class="theme" id="theme" type="button">dark mode</button>
+    </nav>
+  </header>
+
+  <main>
+    <nav class="subtabs" id="subtabs" aria-label="More" hidden>
+      <a href="#books" data-sub="books">books</a>
+      <a href="#movies" data-sub="movies">movies</a>
+      <a href="#puzzle" data-sub="puzzle">lil puzzle game</a>
+    </nav>
+
+    <!-- HOME -->
+    <section class="view view-home" data-view="home">
+      <article class="card c-wx" aria-live="polite">
+        <h2 class="title">berkeley, ca</h2>
+        <div class="body">
+          <span class="wx-temp" id="wx-temp">--°</span>
+          <p class="wx-desc" id="wx-desc">checking the sky</p>
+          <dl class="rows">
+            <div><dt>wind</dt><dd id="wx-wind">--</dd></div>
+            <div><dt>humidity</dt><dd id="wx-hum">--</dd></div>
+            <div><dt>local time</dt><dd id="wx-time">--</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="card c-hello">
+        <h2 class="title">welcome aboard</h2>
+        <div class="body">
+          <p class="hello">Hi, I'm Vishnu.</p>
+          <p>I study applied math, statistics, and data science at UC Berkeley, with a minor in history.</p>
+          <p>I work on making AI systems safer and more reliable: post-training, evaluations, and guardrails for agents that touch real systems.</p>
+        </div>
+      </article>
+
+      <article class="card c-links">
+        <h2 class="title">say hello</h2>
+        <ul class="body links">
+          <li><a href="mailto:vishnu.rajeev@berkeley.edu">email</a></li>
+          <li><a href="https://github.com/VishnuR23" target="_blank" rel="noopener">github</a></li>
+          <li><a href="https://www.linkedin.com/in/vishnurajeev235/" target="_blank" rel="noopener">linkedin</a></li>
+        </ul>
+      </article>
+
+      <article class="card c-now">
+        <h2 class="title">what i'm doing right now</h2>
+        <ul class="body now">
+          <li><b>Series A Stealth Startup</b><span class="role">Research Engineer</span><span>Building backend infrastructure from zero and post-training open-source models. Under NDA.</span></li>
+          <li><b>Berkeley NetSys Lab</b><span class="role">Student Researcher</span><span>Guardrails and agent evals for AI that modifies critical systems code.</span></li>
+          <li><b>Independent Research</b><span class="role">Researcher</span><span>Behavior analysis for biosecurity. Going to NeurIPS 2026!</span></li>
+          <li><b>UC Berkeley</b><span class="role">Student</span><span>Applied math, statistics &amp; data science, graduating 2027.</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="view view-about" data-view="about" hidden>
+      <article class="card c-me">
+        <h2 class="title">about me</h2>
+        <div class="body">
+          <p>I like problems where the math and the engineering meet. Most of my time goes into figuring out why AI systems fail quietly, and then building the tests and guardrails that catch it.</p>
+          <p>I've worked across startups, Microsoft, and research labs at Berkeley, and I contribute fixes to open-source AI safety and eval tools from NVIDIA, Microsoft, AllenAI, and the UK AI Security Institute.</p>
+          <p>I also love hiking, reading, film, and music.</p>
+        </div>
+      </article>
+      <article class="card c-school">
+        <h2 class="title">school</h2>
+        <div class="body">
+          <p class="big">University of California, Berkeley</p>
+          <p>B.A. Applied Mathematics, Statistics, and Data Science<br>Minor in History<br><span class="muted">Graduating 2027</span></p>
+        </div>
+      </article>
+      <article class="card c-classes">
+        <h2 class="title">classes i've liked</h2>
+        <div class="body">
+          <p>Real Analysis, Complex Analysis, Abstract Linear Algebra, Numerical Analysis, Probability, Stochastic Processes, Causal Inference, Machine Learning, Data Structures &amp; Algorithms</p>
+        </div>
+      </article>
+      <article class="card c-tools">
+        <h2 class="title">tools</h2>
+        <dl class="body rows">
+          <div><dt>languages</dt><dd>Python, C++, C#, SQL, Java, R, Go, TypeScript</dd></div>
+          <div><dt>ml</dt><dd>PyTorch, JAX, scikit-learn, LangGraph, HuggingFace</dd></div>
+          <div><dt>systems</dt><dd>AWS, GCP, Docker, Kubernetes, FastAPI, Linux</dd></div>
+        </dl>
+      </article>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="view view-experience" data-view="experience" hidden>
+      <article class="card">
+        <h2 class="title">where i've worked</h2>
+        <div class="body">
+          <div class="roles" id="roles" role="tablist" aria-label="Jobs"></div>
+          <div class="role" id="role-detail" role="tabpanel" aria-live="polite"></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- RESEARCH & PROJECTS -->
+    <section class="view view-work" data-view="work" hidden>
+      <article class="card c-work">
+        <h2 class="title">research &amp; projects</h2>
+        <div class="body">
+          <div class="work-head">
+            <div class="switch" role="tablist" aria-label="Show">
+              <button role="tab" data-seg="research" aria-selected="true">research</button>
+              <button role="tab" data-seg="projects" aria-selected="false">projects</button>
+              <button role="tab" data-seg="oss" aria-selected="false">open source</button>
+            </div>
+          </div>
+          <div class="research-blurb" id="research-blurb">
+            <p>Right now I'm focused on three things:</p>
+            <ul>
+              <li><b>Agent safety.</b> Guardrails and evals for AI agents that touch critical systems code.</li>
+              <li><b>Post-training.</b> Using reinforcement learning to steer model behavior and limit reward hacking.</li>
+              <li><b>Biosecurity.</b> Behavior analysis through hierarchical agentic evals.</li>
+            </ul>
+          </div>
+          <ul class="entries" id="entries" hidden></ul>
+          <p class="more" id="more-projects" hidden>I have like 40 other ones you can check out on <a href="https://github.com/VishnuR23" target="_blank" rel="noopener">my github</a>.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- BOOKS -->
+    <section class="view view-shelf" data-view="books" hidden>
+      <article class="card">
+        <h2 class="title">currently reading</h2>
+        <div class="body">
+          <p class="shelf-title">Mother Mary Comes to Me</p>
+          <p class="muted">Arundhati Roy</p>
+        </div>
+      </article>
+      <article class="card">
+        <h2 class="title">read this year (out of 5)</h2>
+        <ul class="body shelf two-col" id="books-read"></ul>
+      </article>
+    </section>
+
+    <!-- MOVIES -->
+    <section class="view view-shelf" data-view="movies" hidden>
+      <article class="card">
+        <h2 class="title">recently watched</h2>
+        <ul class="body shelf" id="films-recent"></ul>
+        <p class="more">More on <a href="https://letterboxd.com/vishnurajeev/" target="_blank" rel="noopener">letterboxd</a>.</p>
+      </article>
+      <article class="card">
+        <h2 class="title">favorites</h2>
+        <ul class="body shelf" id="films-fav"></ul>
+      </article>
+    </section>
+
+    <!-- PUZZLE -->
+    <section class="view view-puzzle" data-view="puzzle" hidden>
+      <article class="card c-board">
+        <h2 class="title">trail puzzle</h2>
+        <div class="body board-wrap" id="board-wrap">
+          <div class="board" id="board" aria-label="Puzzle board"></div>
+        </div>
+      </article>
+      <article class="card c-controls">
+        <h2 class="title">piece it together</h2>
+        <div class="body controls">
+          <p class="muted small">Drag a piece onto another to swap them, or tap two pieces. Rebuild the photo from a hike.</p>
+
+          <div>
+            <p class="label">trail</p>
+            <div class="photo-list" id="photo-list"></div>
+          </div>
+
+          <div>
+            <p class="label">pieces</p>
+            <div class="switch" id="sizes">
+              <button data-size="3" aria-pressed="true">3 × 3</button>
+              <button data-size="4" aria-pressed="false">4 × 4</button>
+              <button data-size="5" aria-pressed="false">5 × 5</button>
+            </div>
+          </div>
+
+          <dl class="stats">
+            <div><dt>moves</dt><dd id="moves">0</dd></div>
+            <div><dt>time</dt><dd id="time">0:00</dd></div>
+            <div><dt>in place</dt><dd id="placed">0</dd></div>
+          </dl>
+
+          <div class="btns">
+            <button class="btn" id="shuffle">Shuffle</button>
+            <button class="btn btn-line" id="peek" aria-pressed="false">Peek</button>
+          </div>
+          <p class="win" id="win" hidden></p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="foot"><span>built by hand in Berkeley, 2026</span></footer>
+
+  <script src="photos/photos.js"></script>
+  <script src="app.js"></script>
+  <script src="puzzle.js"></script>
+</body>
+</html>
